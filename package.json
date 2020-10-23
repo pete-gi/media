@@ -10,9 +10,9 @@
     "test:jest": "$(npm bin) jest",
     "test:jest:watch": "$(npm bin) jest --watchAll --runInBand",
     "test:cypress": "$(npm bin) cypress run",
-    "test:cypress:watch": "c$(npm bin) ypress run --config watchForFileChanges=true",
-    "test:watch": "concurrently \"npm run test:jest:watch\" \"npm run test:cypress:watch\"",
-    "test": "concurrently \"npm run test:jest\" \"npm run test:cypress\"",
+    "test:cypress:watch": "$(npm bin) cypress run --config watchForFileChanges=true",
+    "test:watch": "npm run test:jest:watch && npm run test:cypress:watch",
+    "test": "npm run test:jest && npm run test:cypress",
     "start": "cross-env NODE_ENV=development webpack --watch",
     "build": "cross-env NODE_ENV=production webpack"
   },
