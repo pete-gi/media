@@ -1,7 +1,7 @@
 import * as webpack from "webpack";
 import { resolve } from "path";
-import { CleanWebpackPlugin } from "clean-webpack-plugin";
-import TerserWebpackPlugin from "terser-webpack-plugin";
+import TerserPlugin from "terser-webpack-plugin";
+const EsmWebpackPlugin = require("@purtuga/esm-webpack-plugin");
 
 const enum ENV {
   dev = "development",
@@ -9,20 +9,23 @@ const enum ENV {
 }
 const ENVIRONMENT = process.env.NODE_ENV as ENV;
 const IS_DEV = process.env.NODE_ENV === ENV.dev;
+const IS_ESM = process.env.NODE_ESM;
 
-export default <webpack.Configuration>{
+const config = <webpack.Configuration>{
   target: "web",
   mode: ENVIRONMENT,
   devtool: IS_DEV ? "inline-source-map" : undefined,
   entry: {
-    media: "./src/index.ts",
+    index: "./src/index.ts",
   },
   output: {
-    filename: "[name].js",
+    filename: IS_ESM ? "[name].js" : "[name].umd.js",
     path: resolve("./lib"),
     publicPath: "/",
-    library: "[name]",
-    libraryTarget: "umd",
+    library: "media",
+    libraryTarget: IS_ESM ? "var" : "umd",
+    libraryExport: IS_ESM ? "" : "default",
+    umdNamedDefine: true,
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".html", ".css"],
@@ -45,6 +48,7 @@ export default <webpack.Configuration>{
             loader: "ts-loader",
             options: {
               onlyCompileBundledFiles: true,
+              transpileOnly: true,
               configFile: resolve("./tsconfig.json"),
             },
           },
@@ -65,15 +69,24 @@ export default <webpack.Configuration>{
     ],
   },
   plugins: [
-    new CleanWebpackPlugin({
-      dry: false,
-      protectWebpackAssets: true,
-      cleanStaleWebpackAssets: true,
-      cleanOnceBeforeBuildPatterns: [resolve("./lib/**/*.*")],
-    }),
+    // new CleanWebpackPlugin({
+    //   dry: false,
+    //   protectWebpackAssets: true,
+    //   cleanStaleWebpackAssets: true,
+    //   cleanOnceBeforeBuildPatterns: [
+    //     resolve("./lib/**/*.*"),
+    //     resolve("./lib/!*.js"),
+    //   ],
+    // }),
   ],
   optimization: {
     minimize: !IS_DEV,
-    minimizer: [new TerserWebpackPlugin()],
+    minimizer: [new TerserPlugin()],
   },
 };
+
+if (IS_ESM) {
+  config!.plugins!.push(new EsmWebpackPlugin());
+}
+
+export default config;

@@ -3,23 +3,31 @@
   "type": "module",
   "version": "0.1.0",
   "description": "Use CSS Media Queries in your JS using promise-like syntax",
-  "main": "./lib/index.js",
+  "main": "lib/media.js",
   "module": "./lib/",
   "types": "./lib/index.d.ts",
   "scripts": {
     "test:jest": "jest",
     "test:jest:watch": "jest --watchAll --runInBand",
-    "test:cypress": "cypress run --config baseUrl=\"http://localhost:5500\"",
-    "test:cypress:watch": "cypress run --config baseUrl=\"http://localhost:5500\" watchForFileChanges=true",
+    "test:cypress": "cypress run",
+    "test:cypress:watch": "cypress run --config watchForFileChanges=true",
     "test:watch": "concurrently \"npm run test:jest:watch\" \"npm run test:cypress:watch\"",
     "test": "npm run test:jest && npm run test:cypress\"",
     "start": "cross-env NODE_ENV=development webpack --watch",
-    "build": "cross-env NODE_ENV=production webpack"
+    "build-esm": "cross-env NODE_ENV=production NODE_ESM=true webpack",
+    "build-script": "cross-env NODE_ENV=production webpack",
+    "build": "npm run build-script && npm run build-esm"
   },
   "author": "Piotr Golczyk <petegi@outlook.com>",
   "homepage": "https://github.com/pete-gi/mediaquery#readme",
   "license": "MIT",
-  "keywords": [],
+  "keywords": [
+    "media",
+    "query",
+    "matchmedia",
+    "js",
+    "css"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pete-gi/mediaquery.git"
@@ -31,12 +39,13 @@
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
+    "@babel/plugin-transform-typescript": "^7.12.1",
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-typescript": "^7.10.4",
+    "@purtuga/esm-webpack-plugin": "^1.4.1",
     "@types/jest": "^26.0.13",
     "@types/terser-webpack-plugin": "^4.2.0",
     "@types/webpack": "^4.41.21",
-    "bundle-declarations-webpack-plugin": "0.0.3",
     "babel-jest": "^26.5.2",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",

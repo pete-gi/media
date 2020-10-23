@@ -53,6 +53,8 @@ interface QueryType {
    * `none` or `hover`
    *
    * _Media Queries Level 4_
+   *
+   * _Chrome 41, Edge 16, Firefox 64, Safari 9, ~~IE~~_
    */
   "any-hover"?: "none" | "hover";
   /**
@@ -61,6 +63,8 @@ interface QueryType {
    * `none` or `hover`
    *
    * _Media Queries Level 4_
+   *
+   * _Chrome 41, Edge 16, Firefox 64, Safari 9, ~~IE~~_
    */
   hover?: "none" | "hover";
 
@@ -70,6 +74,8 @@ interface QueryType {
    * `none`, `coarse` or `fine`
    *
    * _Media Queries Level 4_
+   *
+   * _Chrome 41, Edge 12, Firefox 64, Safari 9, ~~IE~~_
    */
   "any-pointer"?: "none" | "coarse" | "fine";
   /**
@@ -78,6 +84,8 @@ interface QueryType {
    * `none`, `coarse` or `fine`
    *
    * _Media Queries Level 4_
+   *
+   * _Chrome 41, Edge 12, Firefox 64, Safari 9, ~~IE~~_
    */
   pointer?: "none" | "coarse" | "fine";
 
@@ -87,6 +95,8 @@ interface QueryType {
    * `number/number` format
    *
    * _Media Queries Level 3_
+   *
+   * _Chrome 3, Edge 12, Firefox 3.5, Safari 5, IE9_
    */
   "aspect-ratio"?: string;
   /**
@@ -95,6 +105,8 @@ interface QueryType {
    * `number/number` format
    *
    * _Media Queries Level 3_
+   *
+   * _Chrome 3, Edge 12, Firefox 3.5, Safari 5, IE9_
    */
   "min-aspect-ratio"?: string;
   /**
@@ -103,6 +115,8 @@ interface QueryType {
    * `number/number` format
    *
    * _Media Queries Level 3_
+   *
+   * _Chrome 3, Edge 12, Firefox 3.5, Safari 5, IE9_
    */
   "max-aspect-ratio"?: string;
 
@@ -112,6 +126,8 @@ interface QueryType {
    * `number`
    *
    * _Media Queries Level 3_
+   *
+   * _Chrome 1, Edge 12, Firefox 2, Safari 3, ~~IE~~_
    */
   color?: boolean;
   /**
@@ -120,6 +136,8 @@ interface QueryType {
    * `number`
    *
    * _Media Queries Level 3_
+   *
+   * _Chrome 1, Edge 12, Firefox 2, Safari 3, ~~IE~~_
    */
   "min-color"?: number;
   /**
@@ -128,6 +146,8 @@ interface QueryType {
    * `number`
    *
    * _Media Queries Level 3_
+   *
+   * _Chrome 1, Edge 12, Firefox 2, Safari 3, ~~IE~~_
    */
   "max-color"?: number;
 
@@ -137,6 +157,8 @@ interface QueryType {
    * `srgb`, `p3` or `rec2020`
    *
    * _Media Queries Level 4_
+   *
+   * _Chrome 58, Edge 79, ~~Firefox~~, Safari 10, ~~IE~~_
    */
   "color-gamut"?: "srgb" | "p3" | "rec2020";
 
@@ -146,6 +168,8 @@ interface QueryType {
    * `number`
    *
    * _Media Queries Level 3_
+   *
+   * _Chrome 29, Edge 79, ~~Firefox~~, Safari 8, ~~IE~~_
    */
   "color-index"?: number;
   /**
@@ -154,6 +178,8 @@ interface QueryType {
    * `number`
    *
    * _Media Queries Level 3_
+   *
+   * _Chrome 29, Edge 79, ~~Firefox~~, Safari 8, ~~IE~~_
    */
   "min-color-index"?: number;
   /**
@@ -162,6 +188,8 @@ interface QueryType {
    * `number`
    *
    * _Media Queries Level 3_
+   *
+   * _Chrome 29, Edge 79, ~~Firefox~~, Safari 8, ~~IE~~_
    */
   "max-color-index"?: number;
 
@@ -171,6 +199,8 @@ interface QueryType {
    * `fullscreen`, `standalone`, `minimal-ui` or `browser`
    *
    * _Media Queries Level 3_
+   *
+   * _Chrome 45, Edge 79, Firefox 47, Safari 13, ~~IE~~_
    */
   "display-mode"?: "fullscreen" | "standalone" | "minimal-ui" | "browser";
 
@@ -180,6 +210,8 @@ interface QueryType {
    * `none` or `active`
    *
    * _Media Queries Level 5_
+   *
+   * _Chrome 79, Edge 79, Firefox 89, ~~Safari~~, ~~IE~~_
    */
   "forced-colors"?: "none" | "active";
 
@@ -189,6 +221,8 @@ interface QueryType {
    * `0` or `1`
    *
    * _Media Queries Level 3_
+   *
+   * _Chrome 1, Edge 12, Firefox 2, Safari 3, IE10_
    */
   grid?: 0 | 1;
 
@@ -198,6 +232,8 @@ interface QueryType {
    * `string`, `{ value, unit }`, `[value, unit] `, or `{ min?: {  }, max?: {  } }`
    *
    * _Media Queries Level 3_
+   *
+   * _Chrome 1, Edge 12, Firefox 2, Safari 3, IE9_
    */
   width?: string | LengthRange | Length | [number, Unit];
   /**
@@ -206,6 +242,8 @@ interface QueryType {
    * `string`, `{ value, unit }` or `[value, unit]`
    *
    * _Media Queries Level 3_
+   *
+   * _Chrome 1, Edge 12, Firefox 2, Safari 3, IE9_
    */
   "min-width"?: string | Length | [number, Unit];
   /**
@@ -214,6 +252,8 @@ interface QueryType {
    * `string`, `{ value, unit }` or `[value, unit]`
    *
    * _Media Queries Level 3_
+   *
+   * _Chrome 1, Edge 12, Firefox 2, Safari 3, IE9_
    */
   "max-width"?: string | Length | [number, Unit];
 
@@ -223,6 +263,8 @@ interface QueryType {
    * `string`, `{ value, unit }`, `[value, unit] `, or `{ min?: {  }, max?: {  } }`
    *
    * _Media Queries Level 3_
+   *
+   * _Chrome 1, Edge 12, Firefox 2, Safari 3, IE9_
    */
   height?: string | LengthRange | Length | [number, Unit];
   /**
@@ -231,6 +273,8 @@ interface QueryType {
    * `string`, `{ value, unit }` or `[value, unit]`
    *
    * _Media Queries Level 3_
+   *
+   * _Chrome 1, Edge 12, Firefox 2, Safari 3, IE9_
    */
   "min-height"?: string | Length | [number, Unit];
   /**
@@ -239,6 +283,8 @@ interface QueryType {
    * `string`, `{ value, unit }` or `[value, unit]`
    *
    * _Media Queries Level 3_
+   *
+   * _Chrome 1, Edge 12, Firefox 2, Safari 3, IE9_
    */
   "max-height"?: string | Length | [number, Unit];
 
@@ -248,6 +294,8 @@ interface QueryType {
    * `none` or `inverted`
    *
    * _Media Queries Level 5_
+   *
+   * _~~Chrome~~, ~~Edge~~, ~~Firefox~~, Safari 9.1, ~~IE~~_
    */
   "inverted-colors"?: "none" | "inverted";
 
@@ -257,6 +305,8 @@ interface QueryType {
    * `boolean` or `number`
    *
    * _Media Queries Level 3_
+   *
+   * _Chrome 1, Edge 79, Firefox 2, Safari 3, ~~IE~~_
    */
   monochrome?: boolean | number;
   /**
@@ -265,6 +315,8 @@ interface QueryType {
    * `number`
    *
    * _Media Queries Level 3_
+   *
+   * _Chrome 1, Edge 79, Firefox 2, Safari 3, ~~IE~~_
    */
   "min-monochrome"?: number;
   /**
@@ -273,6 +325,8 @@ interface QueryType {
    * `number`
    *
    * _Media Queries Level 3_
+   *
+   * _Chrome 1, Edge 79, Firefox 2, Safari 3, ~~IE~~_
    */
   "max-monochrome"?: number;
 
@@ -282,6 +336,8 @@ interface QueryType {
    * `portrait` or `landscape`
    *
    * _Media Queries Level 3_
+   *
+   * _Chrome 3, Edge 12, Firefox 2, Safari 5, IE9_
    */
   orientation?: "portrait" | "landscape";
 
@@ -291,6 +347,8 @@ interface QueryType {
    * `none`, `scroll`, `optional-paged` or `paged`
    *
    * _Media Queries Level 4_
+   *
+   * _~~Chrome~~, ~~Edge~~, Firefox 66, ~~Safari~~, ~~IE~~_
    */
   "overflow-block"?: "none" | "scroll" | "optional-paged" | "paged";
   /**
@@ -299,6 +357,8 @@ interface QueryType {
    * `none` or `scroll`
    *
    * _Media Queries Level 4_
+   *
+   * _~~Chrome~~, ~~Edge~~, Firefox 66, ~~Safari~~, ~~IE~~_
    */
   "overflow-inline"?: "none" | "scroll";
 
@@ -308,6 +368,8 @@ interface QueryType {
    * `light` or `dark`
    *
    * _Media Queries Level 5_
+   *
+   * _Chrome 76, Edge 79, Firefox 67, Safari 12.1, ~~IE~~_
    */
   "prefers-color-scheme"?: "light" | "dark";
   /**
@@ -316,6 +378,8 @@ interface QueryType {
    * `no-preference`, `more` or `less`
    *
    * _Media Queries Level 5_
+   *
+   * _~~Chrome~~, ~~Edge~~, Firefox 80, ~~Safari~~_
    */
   "prefers-contrast"?: "no-preference" | "more" | "less";
   /**
@@ -324,6 +388,8 @@ interface QueryType {
    * `no-preference` or `reduce`
    *
    * _Media Queries Level 5_
+   *
+   * _Chrome 74, Edge 79, Firefox 63, Safari 10.1, ~~IE~~_
    */
   "prefers-reduced-motion"?: "no-preference" | "reduce";
   /**
@@ -332,6 +398,8 @@ interface QueryType {
    * `no-preference` or `reduce`
    *
    * _Media Queries Level 5_
+   *
+   * _~~Chrome~~, ~~Edge~~, ~~Firefox~~, ~~Safari~~, ~~IE~~_
    */
   "prefers-reduced-transparency"?: "no-preference" | "reduce";
 
@@ -341,6 +409,8 @@ interface QueryType {
    * `string`, `{ value, unit }`, `[value, unit] `, or `{ min?: {  }, max?: {  } }`
    *
    * _Media Queries Level 3_
+   *
+   * _Chrome 29, Edge 12, Firefox 8, ~~Safari~~, IE9_
    */
   resolution?: string | ResolutionRange | Resolution | [number, ResolutionUnit];
   /**
@@ -349,6 +419,8 @@ interface QueryType {
    * `string`, `{ value, unit }` or `[value, unit]`
    *
    * _Media Queries Level 3_
+   *
+   * _Chrome 29, Edge 12, Firefox 8, ~~Safari~~, IE9_
    */
   "min-resolution"?: string | Resolution | [number, ResolutionUnit];
   /**
@@ -357,6 +429,8 @@ interface QueryType {
    * `string`, `{ value, unit }` or `[value, unit]`
    *
    * _Media Queries Level 3_
+   *
+   * _Chrome 29, Edge 12, Firefox 8, ~~Safari~~, IE9_
    */
   "max-resolution"?: string | Resolution | [number, ResolutionUnit];
 
@@ -366,6 +440,8 @@ interface QueryType {
    * `interlace` or `progressive`
    *
    * _Media Queries Level 3_
+   *
+   * _~~Chrome~~, ~~Edge~~, ~~Firefox~~, ~~Safari~~, ~~IE~~_
    */
   scan?: "interlace" | "progressive";
 
@@ -375,6 +451,8 @@ interface QueryType {
    * `none`, `initial-only` or `enabled`
    *
    * _Media Queries Level 5_
+   *
+   * _~~Chrome~~, ~~Edge~~, ~~Firefox~~, ~~Safari~~, ~~IE~~_
    */
   scripting?: "none" | "initial-only" | "enabled";
 
@@ -384,6 +462,8 @@ interface QueryType {
    * `none`, `slow` or `fast`
    *
    * _Media Queries Level 4_
+   *
+   * _~~Chrome~~, ~~Edge~~, ~~Firefox~~, ~~Safari~~, ~~IE~~_
    */
   update?: "none" | "slow" | "fast";
 }

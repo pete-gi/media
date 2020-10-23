@@ -16,34 +16,38 @@
   <div id="test-element"></div>
 
   <script type="module">
+    import media from './lib/index.js';
+    
     const element = document.getElementById('test-element');
 
-    import './lib/media.js';
-    media.default({
-          "min-width": {
-          value: 1200,
-          unit: "px",
-        },
+    media({
+      "min-width": {
+      value: 1200,
+      unit: "px",
+    },
     }).then(() => {
       element.style.backgroundColor = "red";
     }).catch(() => {
       element.style.backgroundColor = "green";
-    })
-    media.default({
+    });
+
+    media({
       orientation: "portrait"
     }).then(() => {
       element.style.border = "5px solid black"
     }).catch(() => {
       element.style.border = ""
-    })
-    media.default({
+    });
+
+    media({
       'max-width': '600px',
     }).then(() => {
       element.style.transform = 'rotate(30deg)';
     }).catch(() => {
       element.style.transform = '';
-    })
-    media.default({
+    });
+
+    media({
       'width': {
         min: '700px',
         max: [800, 'px']
@@ -52,8 +56,7 @@
       element.style.transform = 'rotate(30deg)';
     }).catch(() => {
       element.style.transform = '';
-    })
-
+    });
   </script>
 </body>
 </html>

@@ -40,7 +40,6 @@ class check {
   }
   catch(callback: Function) {
     this.mediaMatch = window.matchMedia(this.query);
-    console.log(this.mediaMatch.media);
     if (!this.mediaMatch.matches) {
       callback();
     }
@@ -61,6 +60,6 @@ const media = (userQuery: string | QueryType): check | Error => {
   }
 };
 
-export default media;
 export { buildQuery };
 export { mouse, touch, mobile, tablet, desktop, widescreen, oldDesktop };
+export default media;
