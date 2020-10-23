@@ -115,7 +115,7 @@ For most params it's straightforward - you choose a param, type the value. But b
 Package offers some buils-ins for module bundler users
 
 - media query builder
-- Can be used to create your own JS media query mixins
+  Can be used to create your own JS media query mixins
 
 ```
 import { buildQuery } from "@petegi/media";
