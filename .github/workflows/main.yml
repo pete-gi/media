@@ -16,8 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install dependencies
       - uses: actions/setup-node@v2
+      - name: Install dependencies
         run: npm ci
   test:
     runs-on: ubuntu-latest
@@ -27,8 +27,8 @@ jobs:
     needs: [install]
     steps:
       - uses: actions/checkout@v2
-      - name: Test with Jest and Cypress
       - uses: actions/setup-node@v2
+      - name: Test with Jest and Cypress
         run: npm test
   build:
     runs-on: ubuntu-latest
@@ -39,6 +39,6 @@ jobs:
     if: github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v2
-      - name: Build with webpack
       - uses: actions/setup-node@v2
+      - name: Build with webpack
         run: npm run build
