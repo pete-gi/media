@@ -1,5 +1,5 @@
 {
-  "name": "mediaquery",
+  "name": "@petegi/mediaquery",
   "type": "module",
   "version": "0.1.0",
   "description": "Use CSS Media Queries in your JS using promise-like syntax",
@@ -16,13 +16,13 @@
     "start": "cross-env NODE_ENV=development webpack --watch",
     "build": "cross-env NODE_ENV=production webpack"
   },
-  "author": "Piotr Golczyk <petegi@outlook.com> https://github.com/pete-gi",
-  "homepage": "",
+  "author": "Piotr Golczyk <petegi@outlook.com>",
+  "homepage": "https://github.com/pete-gi/mediaquery#readme",
   "license": "MIT",
   "keywords": [],
   "repository": {
     "type": "git",
-    "url": "https://github.com/pete-gi/mediaquery"
+    "url": "git+https://github.com/pete-gi/mediaquery.git"
   },
   "engines": {
     "npm": ">= 6.14.8",
@@ -58,5 +58,11 @@
   },
   "dependencies": {
     "cypress": "^5.4.0"
+  },
+  "bugs": {
+    "url": "https://github.com/pete-gi/mediaquery/issues"
+  },
+  "directories": {
+    "lib": "lib"
   }
 }
