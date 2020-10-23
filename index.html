@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Media Query</title>
+  <style>
+    #test-element {
+      width: 1000px;
+      height: 1000px;
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <div id="test-element"></div>
+
+  <script type="module">
+    const element = document.getElementById('test-element');
+
+    import './lib/media.js';
+    media.default({
+          "min-width": {
+          value: 1200,
+          unit: "px",
+        },
+    }).then(() => {
+      element.style.backgroundColor = "red";
+    }).catch(() => {
+      element.style.backgroundColor = "green";
+    })
+    media.default({
+      orientation: "portrait"
+    }).then(() => {
+      element.style.border = "5px solid black"
+    }).catch(() => {
+      element.style.border = ""
+    })
+    media.default({
+      'max-width': '600px',
+    }).then(() => {
+      element.style.transform = 'rotate(30deg)';
+    }).catch(() => {
+      element.style.transform = '';
+    })
+    media.default({
+      'width': {
+        min: '700px',
+        max: [800, 'px']
+      },
+    }).then(() => {
+      element.style.transform = 'rotate(30deg)';
+    }).catch(() => {
+      element.style.transform = '';
+    })
+
+  </script>
+</body>
+</html>

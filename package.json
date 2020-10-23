@@ -1,0 +1,62 @@
+{
+  "name": "mediaquery",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "Use CSS Media Queries in your JS using promise-like syntax",
+  "main": "./lib/index.js",
+  "module": "./lib/",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "test:jest": "jest",
+    "test:jest:watch": "jest --watchAll --runInBand",
+    "test:cypress": "cypress run",
+    "test:cypress:watch": "cypress run --config watchForFileChanges=true",
+    "test:watch": "concurrently \"npm run test:jest:watch\" \"npm run test:cypress:watch\"",
+    "test": "jest --runInBand && cypress run",
+    "start": "cross-env NODE_ENV=development webpack --watch",
+    "build": "cross-env NODE_ENV=production webpack"
+  },
+  "author": "Piotr Golczyk <petegi@outlook.com> https://github.com/pete-gi",
+  "homepage": "",
+  "license": "MIT",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pete-gi/mediaquery"
+  },
+  "engines": {
+    "npm": ">= 6.14.8",
+    "node": ">= 12.6.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-typescript": "^7.10.4",
+    "@types/jest": "^26.0.13",
+    "@types/terser-webpack-plugin": "^4.2.0",
+    "@types/webpack": "^4.41.21",
+    "bundle-declarations-webpack-plugin": "0.0.3",
+    "babel-jest": "^26.5.2",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "concurrently": "^5.3.0",
+    "cross-env": "^7.0.2",
+    "css-loader": "^4.3.0",
+    "html-loader": "^1.3.0",
+    "html-loader-jest": "^0.2.1",
+    "jest": "^26.5.2",
+    "jsdom": "^16.4.0",
+    "style-loader": "^1.2.1",
+    "terser-webpack-plugin": "^4.2.2",
+    "ts-jest": "^26.3.0",
+    "ts-loader": "^8.0.2",
+    "ts-node": "^8.10.2",
+    "typescript": "^4.0.2",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "cypress": "^5.4.0"
+  }
+}
