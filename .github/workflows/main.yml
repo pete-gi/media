@@ -12,33 +12,17 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  install:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-      - name: Install dependencies
-        run: npm ci
-  test:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [8.x, 10.x, 12.x]
-    needs: [install]
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-      - name: Test with Jest and Cypress
-        run: npm test
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [8.x, 10.x, 12.x]
-    needs: [install, test]
-    if: github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
+      - name: Install dependencies
+        run: npm ci
+      - name: Test with Jest and Cypress
+        run: npm test
       - name: Build with webpack
         run: npm run build
